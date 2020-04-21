@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/dblUdtyWVuPIR/418Gh/7lSF0Uss8jTz9k1DPFc4jFxj1kkZQVSc9LWmrhQOzGIvrk+tXCVP948y2i69aRscQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lhue07757\\Desktop\\Doctor\\Doctor.Core\\Doctor.Core\\Doctor.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lhue07757\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.8\\microsoft.visualstudio.azure.containers.tools.targets.1.10.8.nupkg.sha512"
+  ],
+  "logs": []
+}
