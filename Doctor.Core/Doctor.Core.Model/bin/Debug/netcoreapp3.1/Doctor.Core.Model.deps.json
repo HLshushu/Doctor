@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Doctor.Core.Model/1.0.0": {
+        "runtime": {
+          "Doctor.Core.Model.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Doctor.Core.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

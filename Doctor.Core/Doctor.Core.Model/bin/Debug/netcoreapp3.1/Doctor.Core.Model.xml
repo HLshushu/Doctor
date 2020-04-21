@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Doctor.Core.Model</name>
+    </assembly>
+    <members>
+        <member name="T:Doctor.Core.Model.Love">
+            <summary>
+            这是爱
+            </summary>
+        </member>
+        <member name="P:Doctor.Core.Model.Love.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Doctor.Core.Model.Love.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:Doctor.Core.Model.Love.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+    </members>
+</doc>

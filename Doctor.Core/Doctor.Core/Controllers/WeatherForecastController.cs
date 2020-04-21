@@ -4,11 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Doctor.Core.Model;
 
 namespace Doctor.Core.Controllers
 {
+    /// <summary>
+    /// Weather Forecast
+    /// </summary>
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -23,6 +27,10 @@ namespace Doctor.Core.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Get data
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
@@ -34,6 +42,15 @@ namespace Doctor.Core.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        /// <summary>
+        /// post
+        /// </summary>
+        /// <param name="love">model实体类参数</param>
+        [HttpPost]
+        public void Post(Love love)
+        {
         }
     }
 }
