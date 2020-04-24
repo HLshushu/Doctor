@@ -8,4 +8,8 @@
     <DocumentationFile>C:\Users\lhue07757\Desktop\Doctor\Doctor.Core\Doctor.Core.Model\Doctor.Core.Model.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="sqlSugarCore" Version="5.0.0.14" />
+  </ItemGroup>
+
 </Project>

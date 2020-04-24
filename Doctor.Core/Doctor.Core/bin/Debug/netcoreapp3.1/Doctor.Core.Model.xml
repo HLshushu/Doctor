@@ -24,5 +24,65 @@
             年龄
             </summary>
         </member>
+        <member name="T:Doctor.Core.Model.sysUserInfo">
+            <summary>
+            用户信息表
+            </summary>
+        </member>
+        <member name="P:Doctor.Core.Model.sysUserInfo.uID">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:Doctor.Core.Model.sysUserInfo.uLoginName">
+            <summary>
+            登录账号
+            </summary>
+        </member>
+        <member name="P:Doctor.Core.Model.sysUserInfo.uLoginPWD">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="P:Doctor.Core.Model.sysUserInfo.uRealName">
+            <summary>
+            真实姓名
+            </summary>
+        </member>
+        <member name="P:Doctor.Core.Model.sysUserInfo.uStatus">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:Doctor.Core.Model.sysUserInfo.uRemark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Doctor.Core.Model.sysUserInfo.uCreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Doctor.Core.Model.sysUserInfo.uUpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:Doctor.Core.Model.sysUserInfo.uLastErrTime">
+             <summary>
+            最后登录时间 
+             </summary>
+        </member>
+        <member name="P:Doctor.Core.Model.sysUserInfo.uErrorCount">
+             <summary>
+            错误次数 
+             </summary>
+        </member>
+        <member name="P:Doctor.Core.Model.sysUserInfo.name">
+            <summary>
+            登录账号
+            </summary>
+        </member>
     </members>
 </doc>

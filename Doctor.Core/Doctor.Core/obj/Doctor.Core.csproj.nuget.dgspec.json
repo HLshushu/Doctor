@@ -117,6 +117,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "sqlSugarCore": {
+              "target": "Package",
+              "version": "[5.0.0.14, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

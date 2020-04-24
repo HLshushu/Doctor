@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Doctor.Core.Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Doctor.Core.Controllers
 {
@@ -51,6 +52,17 @@ namespace Doctor.Core.Controllers
         [HttpPost]
         public void Post(Love love)
         {
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Authorize(Policy = "SystemOrAdmin")]
+        public ActionResult<IEnumerable<string>> GetA()
+        {
+            return new string[] { "value1", "value2" };
         }
     }
 }

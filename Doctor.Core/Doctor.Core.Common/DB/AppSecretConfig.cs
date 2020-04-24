@@ -1,7 +1,7 @@
 ﻿using System.IO;
-using Doctor.Core.Common.Helper;
+using Doctor.Core.Common;
 
-namespace Doctor.Core.Common.DB
+namespace Doctor.Core.Common
 {
     public class AppSecretConfig
     {

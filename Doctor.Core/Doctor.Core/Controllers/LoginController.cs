@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
+using Doctor.Core.Model;
+using Doctor.Core.AuthHelper;
+
 namespace Doctor.Core.Controllers
 {
     /// <summary>
@@ -20,6 +23,7 @@ namespace Doctor.Core.Controllers
     [AllowAnonymous]
     public class LoginController : Controller
     {
+        // readonly ISysUserInfoServices _sysUserInfoServices;
 
         public async Task<object> GetJwtStr(string name, string pass)
         {
@@ -27,7 +31,8 @@ namespace Doctor.Core.Controllers
             bool suc = false;
 
             // 获取用户的角色名，请暂时忽略其内部是如何获取的，可以直接用 var userRole="Admin"; 来代替更好理解。
-            var userRole = await _sysUserInfoServices.GetUserRoleNameStr(name, pass);
+            // var userRole = await _sysUserInfoServices.GetUserRoleNameStr(name, pass);
+            var userRole = "Admin";
             if (userRole != null)
             {
                 // 将用户id和角色名，作为单独的自定义变量封装进 token 字符串中。

@@ -16,6 +16,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.Filters;
+using Doctor.Core.AuthHelper;
 
 namespace Doctor.Core
 {
@@ -70,6 +71,16 @@ namespace Doctor.Core
                 });
                 #endregion
             });
+
+
+            // 1【授权】、这个和上边的异曲同工，好处就是不用在controller中，写多个 roles 。
+            // 然后这么写 [Authorize(Policy = "Admin")]
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Client", policy => policy.RequireRole("Client").Build());
+                options.AddPolicy("Admin", policy => policy.RequireRole("Admin").Build());
+                options.AddPolicy("SystemOrAdmin", policy => policy.RequireRole("Admin", "System"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -88,6 +99,9 @@ namespace Doctor.Core
                 //路径配置，设置为空，表示直接在根域名（localhost:8001）访问该文件,注意localhost:8001/swagger是访问不到的，去launchSettings.json把launchUrl去掉，如果你想换一个路径，直接写名字即可，比如直接写c.RoutePrefix = "doc";
                 c.RoutePrefix = "";
             });
+
+            //自定义认证中间件
+            app.UseJwtTokenAuth(); //也可以app.UseMiddleware<JwtTokenAuth>();
 
             app.UseHttpsRedirection();
 
