@@ -24,64 +24,54 @@
             年龄
             </summary>
         </member>
-        <member name="T:Doctor.Core.Model.sysUserInfo">
+        <member name="T:Doctor.Core.Model.MessageModel`1">
             <summary>
-            用户信息表
+            通用返回信息类
             </summary>
         </member>
-        <member name="P:Doctor.Core.Model.sysUserInfo.uID">
+        <member name="P:Doctor.Core.Model.MessageModel`1.Success">
             <summary>
-            用户ID
+            操作是否成功
             </summary>
         </member>
-        <member name="P:Doctor.Core.Model.sysUserInfo.uLoginName">
+        <member name="P:Doctor.Core.Model.MessageModel`1.Msg">
             <summary>
-            登录账号
+            返回信息
             </summary>
         </member>
-        <member name="P:Doctor.Core.Model.sysUserInfo.uLoginPWD">
+        <member name="P:Doctor.Core.Model.MessageModel`1.Data">
             <summary>
-            登录密码
+            返回数据集合
             </summary>
         </member>
-        <member name="P:Doctor.Core.Model.sysUserInfo.uRealName">
+        <member name="P:Doctor.Core.Model.Advertisement.Id">
             <summary>
-            真实姓名
+            ID
             </summary>
         </member>
-        <member name="P:Doctor.Core.Model.sysUserInfo.uStatus">
+        <member name="P:Doctor.Core.Model.Advertisement.ImgUrl">
             <summary>
-            状态
+            广告图片
             </summary>
         </member>
-        <member name="P:Doctor.Core.Model.sysUserInfo.uRemark">
+        <member name="P:Doctor.Core.Model.Advertisement.Title">
+            <summary>
+            广告标题
+            </summary>
+        </member>
+        <member name="P:Doctor.Core.Model.Advertisement.Url">
+            <summary>
+            广告链接
+            </summary>
+        </member>
+        <member name="P:Doctor.Core.Model.Advertisement.Remark">
             <summary>
             备注
             </summary>
         </member>
-        <member name="P:Doctor.Core.Model.sysUserInfo.uCreateTime">
+        <member name="P:Doctor.Core.Model.Advertisement.Createdate">
             <summary>
             创建时间
-            </summary>
-        </member>
-        <member name="P:Doctor.Core.Model.sysUserInfo.uUpdateTime">
-            <summary>
-            更新时间
-            </summary>
-        </member>
-        <member name="P:Doctor.Core.Model.sysUserInfo.uLastErrTime">
-             <summary>
-            最后登录时间 
-             </summary>
-        </member>
-        <member name="P:Doctor.Core.Model.sysUserInfo.uErrorCount">
-             <summary>
-            错误次数 
-             </summary>
-        </member>
-        <member name="P:Doctor.Core.Model.sysUserInfo.name">
-            <summary>
-            登录账号
             </summary>
         </member>
     </members>

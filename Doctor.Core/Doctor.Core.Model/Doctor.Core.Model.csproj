@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="UtilConvert.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="sqlSugarCore" Version="5.0.0.14" />
   </ItemGroup>
 

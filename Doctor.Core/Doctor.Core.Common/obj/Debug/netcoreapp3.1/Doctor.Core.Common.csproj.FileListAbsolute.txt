@@ -7,3 +7,11 @@ C:\Users\lhue07757\Desktop\Doctor\Doctor.Core\Doctor.Core.Common\bin\Debug\netco
 C:\Users\lhue07757\Desktop\Doctor\Doctor.Core\Doctor.Core.Common\obj\Debug\netcoreapp3.1\Doctor.Core.Common.csproj.CoreCompileInputs.cache
 C:\Users\lhue07757\Desktop\Doctor\Doctor.Core\Doctor.Core.Common\obj\Debug\netcoreapp3.1\Doctor.Core.Common.dll
 C:\Users\lhue07757\Desktop\Doctor\Doctor.Core\Doctor.Core.Common\obj\Debug\netcoreapp3.1\Doctor.Core.Common.pdb
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Common\bin\Debug\netcoreapp3.1\Doctor.Core.Common.deps.json
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Common\bin\Debug\netcoreapp3.1\Doctor.Core.Common.dll
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Common\bin\Debug\netcoreapp3.1\Doctor.Core.Common.pdb
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Common\obj\Debug\netcoreapp3.1\Doctor.Core.Common.csprojAssemblyReference.cache
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Common\obj\Debug\netcoreapp3.1\Doctor.Core.Common.AssemblyInfoInputs.cache
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Common\obj\Debug\netcoreapp3.1\Doctor.Core.Common.AssemblyInfo.cs
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Common\obj\Debug\netcoreapp3.1\Doctor.Core.Common.dll
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Common\obj\Debug\netcoreapp3.1\Doctor.Core.Common.pdb

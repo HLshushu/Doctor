@@ -38,6 +38,13 @@
             职能
             </summary>
         </member>
+        <member name="M:Doctor.Core.Controllers.DoctorController.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:Doctor.Core.Controllers.WeatherForecastController">
             <summary>
             Weather Forecast

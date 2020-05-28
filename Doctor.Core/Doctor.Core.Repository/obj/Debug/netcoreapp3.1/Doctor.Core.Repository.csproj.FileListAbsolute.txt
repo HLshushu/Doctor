@@ -1,0 +1,14 @@
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Repository\bin\Debug\netcoreapp3.1\Doctor.Core.Repository.deps.json
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Repository\bin\Debug\netcoreapp3.1\Doctor.Core.Repository.dll
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Repository\bin\Debug\netcoreapp3.1\Doctor.Core.Repository.pdb
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Repository\obj\Debug\netcoreapp3.1\Doctor.Core.Repository.AssemblyInfoInputs.cache
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Repository\obj\Debug\netcoreapp3.1\Doctor.Core.Repository.AssemblyInfo.cs
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Repository\obj\Debug\netcoreapp3.1\Doctor.Core.Repository.dll
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Repository\obj\Debug\netcoreapp3.1\Doctor.Core.Repository.pdb
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Repository\bin\Debug\netcoreapp3.1\Doctor.Core.IRepository.dll
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Repository\bin\Debug\netcoreapp3.1\Doctor.Core.IRepository.pdb
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Repository\obj\Debug\netcoreapp3.1\Doctor.Core.Repository.csprojAssemblyReference.cache
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Repository\obj\Debug\netcoreapp3.1\Doctor.Core.Repository.csproj.CopyComplete
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Repository\bin\Debug\netcoreapp3.1\Doctor.Core.Model.dll
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Repository\bin\Debug\netcoreapp3.1\Doctor.Core.Model.pdb
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.Repository\bin\Debug\netcoreapp3.1\Doctor.Core.Model.xml

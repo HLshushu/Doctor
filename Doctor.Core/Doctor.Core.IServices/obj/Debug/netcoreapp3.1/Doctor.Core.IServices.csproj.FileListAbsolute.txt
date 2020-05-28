@@ -1,0 +1,12 @@
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.IServices\bin\Debug\netcoreapp3.1\Doctor.Core.IServices.deps.json
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.IServices\bin\Debug\netcoreapp3.1\Doctor.Core.IServices.dll
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.IServices\bin\Debug\netcoreapp3.1\Doctor.Core.IServices.pdb
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.IServices\obj\Debug\netcoreapp3.1\Doctor.Core.IServices.csprojAssemblyReference.cache
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.IServices\obj\Debug\netcoreapp3.1\Doctor.Core.IServices.AssemblyInfoInputs.cache
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.IServices\obj\Debug\netcoreapp3.1\Doctor.Core.IServices.AssemblyInfo.cs
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.IServices\obj\Debug\netcoreapp3.1\Doctor.Core.IServices.dll
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.IServices\obj\Debug\netcoreapp3.1\Doctor.Core.IServices.pdb
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.IServices\bin\Debug\netcoreapp3.1\Doctor.Core.Model.dll
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.IServices\bin\Debug\netcoreapp3.1\Doctor.Core.Model.pdb
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.IServices\bin\Debug\netcoreapp3.1\Doctor.Core.Model.xml
+C:\Users\lhue07757\Documents\Doctor\Doctor.Core\Doctor.Core.IServices\obj\Debug\netcoreapp3.1\Doctor.Core.IServices.csproj.CopyComplete

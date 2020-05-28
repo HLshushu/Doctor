@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lhue07757\\Desktop\\Doctor\\Doctor.Core\\Doctor.Core.Common\\Doctor.Core.Common.csproj": {}
+    "C:\\Users\\lhue07757\\Documents\\Doctor\\Doctor.Core\\Doctor.Core.Common\\Doctor.Core.Common.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lhue07757\\Desktop\\Doctor\\Doctor.Core\\Doctor.Core.Common\\Doctor.Core.Common.csproj": {
+    "C:\\Users\\lhue07757\\Documents\\Doctor\\Doctor.Core\\Doctor.Core.Common\\Doctor.Core.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lhue07757\\Desktop\\Doctor\\Doctor.Core\\Doctor.Core.Common\\Doctor.Core.Common.csproj",
+        "projectUniqueName": "C:\\Users\\lhue07757\\Documents\\Doctor\\Doctor.Core\\Doctor.Core.Common\\Doctor.Core.Common.csproj",
         "projectName": "Doctor.Core.Common",
-        "projectPath": "C:\\Users\\lhue07757\\Desktop\\Doctor\\Doctor.Core\\Doctor.Core.Common\\Doctor.Core.Common.csproj",
+        "projectPath": "C:\\Users\\lhue07757\\Documents\\Doctor\\Doctor.Core\\Doctor.Core.Common\\Doctor.Core.Common.csproj",
         "packagesPath": "C:\\Users\\lhue07757\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lhue07757\\Desktop\\Doctor\\Doctor.Core\\Doctor.Core.Common\\obj\\",
+        "outputPath": "C:\\Users\\lhue07757\\Documents\\Doctor\\Doctor.Core\\Doctor.Core.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
