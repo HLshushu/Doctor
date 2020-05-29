@@ -21,8 +21,9 @@ namespace Doctor.Core.Controllers
         [HttpGet]
         public int Get(int i, int j)
         {
-            IAdvertisementServices advertisementServices = new AdvertisementServices();
-            return advertisementServices.Sum(i, j);
+            // IAdvertisementServices advertisementServices = new AdvertisementServices();
+            // return advertisementServices.Sum(i, j);
+            return 5;
         }
 
         // GET: api/Doctor/5
@@ -32,11 +33,11 @@ namespace Doctor.Core.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}", Name = "Get")]
-        public List<Advertisement> Get(int id)
+        public async Task<List<Advertisement>> Get(int id)
         {
             IAdvertisementServices advertisementServices = new AdvertisementServices();
 
-            return advertisementServices.Query(d => d.Id == id);
+            return await advertisementServices.Query(d => d.Id == id);
         }
 
         // POST: api/Doctor
