@@ -13,7 +13,7 @@ namespace Doctor.Core.Controllers
 {
     [Produces("application/json")]
     [Route("api/[controller]")]
-    [Authorize(Policy = "Admin")]
+    //[Authorize(Policy = "Admin")]
     [ApiController]
     public class DoctorController : ControllerBase
     {

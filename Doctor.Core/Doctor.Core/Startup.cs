@@ -17,6 +17,7 @@ using Swashbuckle.AspNetCore.SwaggerUI;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.Filters;
 using Doctor.Core.AuthHelper;
+using Doctor.Core.Repository;
 
 namespace Doctor.Core
 {
@@ -35,6 +36,7 @@ namespace Doctor.Core
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            BaseDBConfig.ConnectionString = Configuration.GetSection("AppSettings:SqlServerConnection").Value;
 
             var basePath = AppContext.BaseDirectory;
             services.AddSwaggerGen(c =>
@@ -56,31 +58,31 @@ namespace Doctor.Core
                 var xmlModelPath = Path.Combine(basePath, "Doctor.Core.Model.xml");//这个就是Model层的xml文件名
                 c.IncludeXmlComments(xmlModelPath);
 
-                c.OperationFilter<AddResponseHeadersFilter>();
-                c.OperationFilter<AppendAuthorizeToSummaryOperationFilter>();
+                //c.OperationFilter<AddResponseHeadersFilter>();
+                //c.OperationFilter<AppendAuthorizeToSummaryOperationFilter>();
 
-                c.OperationFilter<SecurityRequirementsOperationFilter>();
+                //c.OperationFilter<SecurityRequirementsOperationFilter>();
 
-                #region Token绑定到ConfigureServices
-                c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
-                {
-                    Description = "JWT授权(数据将在请求头中进行传输) 直接在下框中输入Bearer {token}（注意两者之间是一个空格）\"",
-                    Name = "Authorization",//jwt默认的参数名称
-                    In = ParameterLocation.Header,//jwt默认存放Authorization信息的位置(请求头中)
-                    Type = SecuritySchemeType.ApiKey
-                });
-                #endregion
+                //#region Token绑定到ConfigureServices
+                //c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+                //{
+                //    Description = "JWT授权(数据将在请求头中进行传输) 直接在下框中输入Bearer {token}（注意两者之间是一个空格）\"",
+                //    Name = "Authorization",//jwt默认的参数名称
+                //    In = ParameterLocation.Header,//jwt默认存放Authorization信息的位置(请求头中)
+                //    Type = SecuritySchemeType.ApiKey
+                //});
+                //#endregion
             });
 
 
             // 1【授权】、这个和上边的异曲同工，好处就是不用在controller中，写多个 roles 。
             // 然后这么写 [Authorize(Policy = "Admin")]
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("Client", policy => policy.RequireRole("Client").Build());
-                options.AddPolicy("Admin", policy => policy.RequireRole("Admin").Build());
-                options.AddPolicy("SystemOrAdmin", policy => policy.RequireRole("Admin", "System"));
-            });
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("Client", policy => policy.RequireRole("Client").Build());
+            //    options.AddPolicy("Admin", policy => policy.RequireRole("Admin").Build());
+            //    options.AddPolicy("SystemOrAdmin", policy => policy.RequireRole("Admin", "System"));
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -101,7 +103,7 @@ namespace Doctor.Core
             });
 
             //自定义认证中间件
-            app.UseJwtTokenAuth(); //也可以app.UseMiddleware<JwtTokenAuth>();
+            // app.UseJwtTokenAuth(); //也可以app.UseMiddleware<JwtTokenAuth>();
 
             app.UseHttpsRedirection();
 

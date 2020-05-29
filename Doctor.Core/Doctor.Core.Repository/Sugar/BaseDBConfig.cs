@@ -6,6 +6,6 @@ namespace Doctor.Core.Repository
 {
     public class BaseDBConfig
     {
-        public static string ConnectionString = "server=.;uid=sa;pwd=sa;database=BlogDB"; 
+        public static string ConnectionString { get; set; }
     }
 }

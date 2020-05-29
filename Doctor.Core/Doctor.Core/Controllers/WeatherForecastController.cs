@@ -33,8 +33,8 @@ namespace Doctor.Core.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Authorize(Roles = "Admin")]
-        [Authorize(Policy = "SystemOrAdmin")]
+        // [Authorize(Roles = "Admin")]
+        // [Authorize(Policy = "SystemOrAdmin")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
