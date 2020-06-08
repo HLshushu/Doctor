@@ -5,7 +5,8 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
-using Doctor.Core.Common;
+using Doctor.Core.Common.Helper;
+using Doctor.Core.Common.DB;
 using SqlSugar;
 
 namespace Doctor.Core.AuthHelper

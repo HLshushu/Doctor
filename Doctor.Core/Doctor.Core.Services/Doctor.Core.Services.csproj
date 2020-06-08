@@ -4,10 +4,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\Doctor.Core\bin\debug</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Doctor.Core.IRepository\Doctor.Core.IRepository.csproj" />
     <ProjectReference Include="..\Doctor.Core.IServices\Doctor.Core.IServices.csproj" />
-    <ProjectReference Include="..\Doctor.Core.Repository\Doctor.Core.Repository.csproj" />
   </ItemGroup>
 
 </Project>

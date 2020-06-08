@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Doctor.Core.IServices;
-using Doctor.Core.Services;
 using Doctor.Core.Model;
 
 namespace Doctor.Core.Controllers
@@ -17,6 +16,13 @@ namespace Doctor.Core.Controllers
     [ApiController]
     public class DoctorController : ControllerBase
     {
+        private readonly IAdvertisementServices advertisementServices;
+
+        public DoctorController(IAdvertisementServices advertisementServices)
+        {
+            this.advertisementServices = advertisementServices;
+        }
+
         // GET: api/Doctor
         [HttpGet]
         public int Get(int i, int j)
@@ -35,8 +41,6 @@ namespace Doctor.Core.Controllers
         [HttpGet("{id}", Name = "Get")]
         public async Task<List<Advertisement>> Get(int id)
         {
-            IAdvertisementServices advertisementServices = new AdvertisementServices();
-
             return await advertisementServices.Query(d => d.Id == id);
         }
 

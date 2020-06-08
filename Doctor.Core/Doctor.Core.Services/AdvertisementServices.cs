@@ -1,7 +1,6 @@
 ﻿using Doctor.Core.IRepository;
 using Doctor.Core.IServices;
 using Doctor.Core.Model;
-using Doctor.Core.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
@@ -10,7 +9,20 @@ namespace Doctor.Core.Services
 {
     public class AdvertisementServices : BaseServices<Advertisement>, IAdvertisementServices
     {
-        //public IAdvertisementRepository dal = new AdvertisementRepository();
+        public int Test()
+        {
+            return 1;
+        }
+
+        public IAdvertisementRepository dal;
+
+        public AdvertisementServices(IAdvertisementRepository dal)
+        {
+            this.dal = dal;
+            base.baseDal = dal;
+        }
+
+        public List<AdvertisementEntity> TestAOP() => new List<AdvertisementEntity>() { new AdvertisementEntity() { id = 1, name = "laozhang" } };
 
         //public int Sum(int i, int j)
         //{

@@ -12,5 +12,7 @@ namespace Doctor.Core.IServices
         //bool Delete(Advertisement model);
         //bool Update(Advertisement model);
         //List<Advertisement> Query(Expression<Func<Advertisement, bool>> whereExpression);
+        int Test();
+        List<AdvertisementEntity> TestAOP();
     }
 }

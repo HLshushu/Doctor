@@ -4,18 +4,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Doctor.Core", "Doctor.Core\Doctor.Core.csproj", "{BFE85886-4B37-4CED-970B-5837FE61EA81}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7E7A5F2E-237D-47B0-96EB-7251D80270BB} = {7E7A5F2E-237D-47B0-96EB-7251D80270BB}
+		{79F7EA7D-C80F-4F9C-9363-021F67B56380} = {79F7EA7D-C80F-4F9C-9363-021F67B56380}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Doctor.Core.Model", "Doctor.Core.Model\Doctor.Core.Model.csproj", "{4798183C-C02B-42BE-89A5-E029D9AF7A4C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Doctor.Core.Common", "Doctor.Core.Common\Doctor.Core.Common.csproj", "{7EA49155-1BDA-4908-A078-1663BAA51B26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Doctor.Core.IRepository", "Doctor.Core.IRepository\Doctor.Core.IRepository.csproj", "{FE8C853C-EACC-469C-8C7F-6639E88F082E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Doctor.Core.IRepository", "Doctor.Core.IRepository\Doctor.Core.IRepository.csproj", "{FE8C853C-EACC-469C-8C7F-6639E88F082E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Doctor.Core.Repository", "Doctor.Core.Repository\Doctor.Core.Repository.csproj", "{7E7A5F2E-237D-47B0-96EB-7251D80270BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Doctor.Core.Repository", "Doctor.Core.Repository\Doctor.Core.Repository.csproj", "{7E7A5F2E-237D-47B0-96EB-7251D80270BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Doctor.Core.IServices", "Doctor.Core.IServices\Doctor.Core.IServices.csproj", "{2F6857B7-FA40-4FE5-9B63-234F39BA5E11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Doctor.Core.IServices", "Doctor.Core.IServices\Doctor.Core.IServices.csproj", "{2F6857B7-FA40-4FE5-9B63-234F39BA5E11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Doctor.Core.Services", "Doctor.Core.Services\Doctor.Core.Services.csproj", "{79F7EA7D-C80F-4F9C-9363-021F67B56380}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Doctor.Core.Services", "Doctor.Core.Services\Doctor.Core.Services.csproj", "{79F7EA7D-C80F-4F9C-9363-021F67B56380}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

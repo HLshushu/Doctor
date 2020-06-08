@@ -17,7 +17,10 @@ using Swashbuckle.AspNetCore.SwaggerUI;
 using Swashbuckle.AspNetCore.Swagger;
 using Swashbuckle.AspNetCore.Filters;
 using Doctor.Core.AuthHelper;
-using Doctor.Core.Repository;
+using System.Reflection;
+using Autofac;
+using Autofac.Extras.DynamicProxy;
+using Doctor.Core.AOP;
 
 namespace Doctor.Core
 {
@@ -36,7 +39,7 @@ namespace Doctor.Core
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            BaseDBConfig.ConnectionString = Configuration.GetSection("AppSettings:SqlServerConnection").Value;
+            // BaseDBConfig.ConnectionString = Configuration.GetSection("AppSettings:SqlServerConnection").Value;
 
             var basePath = AppContext.BaseDirectory;
             services.AddSwaggerGen(c =>
@@ -83,6 +86,35 @@ namespace Doctor.Core
             //    options.AddPolicy("Admin", policy => policy.RequireRole("Admin").Build());
             //    options.AddPolicy("SystemOrAdmin", policy => policy.RequireRole("Admin", "System"));
             //});
+        }
+
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
+
+            //直接注册某一个类和接口
+            //左边的是实现类，右边的As是接口
+            // builder.RegisterType<AdvertisementServices>().As<IAdvertisementServices>();
+
+            builder.RegisterType<DoctorLogAOP>();//可以直接替换其他拦截器！一定要把拦截器进行注册
+
+            //注册要通过反射创建的组件
+            var servicesDllFile = Path.Combine(basePath, "Doctor.Core.Services.dll");
+            var assemblysServices = Assembly.LoadFrom(servicesDllFile);
+
+            builder.RegisterAssemblyTypes(assemblysServices)
+                      .AsImplementedInterfaces()
+                      .InstancePerLifetimeScope()
+                      .EnableInterfaceInterceptors()
+                      .InterceptedBy(typeof(DoctorLogAOP));//可以放一个AOP拦截器集合
+
+            var repositoryDllFile = Path.Combine(basePath, "Doctor.Core.Repository.dll");
+            // 获取 Repository.dll 程序集服务，并注册
+            var assemblysRepository = Assembly.LoadFrom(repositoryDllFile);
+            builder.RegisterAssemblyTypes(assemblysRepository)
+                   .AsImplementedInterfaces()
+                   .InstancePerDependency();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

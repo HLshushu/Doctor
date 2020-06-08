@@ -4,18 +4,18 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Doctor.Core.IServices;
 using Doctor.Core.IRepository;
-using Doctor.Core.Repository;
 
 namespace Doctor.Core.Services
 {
     public class BaseServices<TEntity> : IBaseServices<TEntity> where TEntity : class, new()
     {
-        public IBaseRepository<TEntity> baseDal = new BaseRepository<TEntity>();
+        public IBaseRepository<TEntity> baseDal;//通过在子类的构造函数中注入，这里是基类，不用构造函数
 
         public async Task<TEntity> QueryByID(object objId)
         {
             return await baseDal.QueryByID(objId);
         }
+
         /// <summary>
         /// 功能描述:根据ID查询一条数据
         /// 作　　者:AZLinli.Blog.Core

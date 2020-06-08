@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration.Json;
 using System;
 using System.Linq;
 
-namespace Doctor.Core.Common
+namespace Doctor.Core.Common.Helper
 {
     /// <summary>
     /// appsettings.json操作类
