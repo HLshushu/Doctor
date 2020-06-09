@@ -6,6 +6,6 @@ namespace Doctor.Core.Repository
 {
     public class BaseDBConfig
     {
-        public static string ConnectionString { get { return "Data Source=localhost;Initial Catalog=DoctorCoreDB;Integrated Security=True";  } set { } }
+        public static string ConnectionString { get; set; }
     }
 }

@@ -4,6 +4,7 @@ using Doctor.Core.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using Doctor.Core.Common.Attributes;
 
 namespace Doctor.Core.Services
 {
@@ -22,6 +23,7 @@ namespace Doctor.Core.Services
             base.baseDal = dal;
         }
 
+        [Caching(AbsoluteExpiration = 10)]
         public List<AdvertisementEntity> TestAOP() => new List<AdvertisementEntity>() { new AdvertisementEntity() { id = 1, name = "laozhang" } };
 
         //public int Sum(int i, int j)

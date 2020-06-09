@@ -34,15 +34,20 @@ namespace Doctor.Core.Common.Helper
         {
             try
             {
-
-                if (sections.Any())
+                var val = string.Empty;
+                for (int i = 0; i < sections.Length; i++)
                 {
-                    return Configuration[string.Join(":", sections)];
+                    val += sections[i] + ":";
                 }
-            }
-            catch (Exception) { }
 
-            return "";
+                return Configuration.GetSection(val.TrimEnd(':')).Value;
+
+                // return Configuration[val.TrimEnd(':')];
+            }
+            catch (Exception)
+            {
+                return "";
+            }
         }
     }
 }

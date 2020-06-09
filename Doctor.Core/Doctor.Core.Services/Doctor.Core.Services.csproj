@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Doctor.Core.Common\Doctor.Core.Common.csproj" />
     <ProjectReference Include="..\Doctor.Core.IRepository\Doctor.Core.IRepository.csproj" />
     <ProjectReference Include="..\Doctor.Core.IServices\Doctor.Core.IServices.csproj" />
   </ItemGroup>

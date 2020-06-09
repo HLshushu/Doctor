@@ -30,10 +30,17 @@
     <ProjectReference Include="..\Doctor.Core.IRepository\Doctor.Core.IRepository.csproj" />
     <ProjectReference Include="..\Doctor.Core.IServices\Doctor.Core.IServices.csproj" />
     <ProjectReference Include="..\Doctor.Core.Model\Doctor.Core.Model.csproj" />
+    <ProjectReference Include="..\Doctor.Core.Repository\Doctor.Core.Repository.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Log\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 

@@ -8,3 +8,63 @@
 【当前执行方法】：TestAOP 
 【携带的参数有】：  
 【执行完成结果】：System.Collections.Generic.List`1[Doctor.Core.Model.AdvertisementEntity]
+--------------------------------
+6/9/2020 11:19:20 AM|
+【当前执行方法】：TestAOP 
+【携带的参数有】：  
+【执行完成结果】：System.Collections.Generic.List`1[Doctor.Core.Model.AdvertisementEntity]
+--------------------------------
+6/9/2020 11:19:51 AM|
+【当前执行方法】：TestAOP 
+【携带的参数有】：  
+【执行完成结果】：System.Collections.Generic.List`1[Doctor.Core.Model.AdvertisementEntity]
+--------------------------------
+6/9/2020 11:22:13 AM|
+【当前执行方法】：TestAOP 
+【携带的参数有】：  
+【执行完成结果】：System.Collections.Generic.List`1[Doctor.Core.Model.AdvertisementEntity]
+--------------------------------
+6/9/2020 11:22:26 AM|
+【当前执行方法】：TestAOP 
+【携带的参数有】：  
+【执行完成结果】：System.Collections.Generic.List`1[Doctor.Core.Model.AdvertisementEntity]
+--------------------------------
+6/9/2020 3:09:03 PM|
+【当前执行方法】：Test 
+【携带的参数有】：  
+【执行完成结果】：
+--------------------------------
+6/9/2020 3:10:00 PM|
+【当前执行方法】：TestAOP 
+【携带的参数有】：  
+【执行完成结果】：System.Collections.Generic.List`1[Doctor.Core.Model.AdvertisementEntity]
+--------------------------------
+6/9/2020 5:15:03 PM|
+【当前执行方法】：Query 
+【携带的参数有】： d => (d.Id == value(Doctor.Core.Controllers.DoctorController+<>c__DisplayClass4_0).id) 
+【执行完成结果】：
+--------------------------------
+6/9/2020 5:15:51 PM|
+【当前执行方法】：Query 
+【携带的参数有】： d => (d.Id == value(Doctor.Core.Controllers.DoctorController+<>c__DisplayClass4_0).id) 
+【执行完成结果】：
+--------------------------------
+6/9/2020 5:16:47 PM|
+【当前执行方法】：Query 
+【携带的参数有】： d => (d.Id == value(Doctor.Core.Controllers.DoctorController+<>c__DisplayClass4_0).id) 
+【执行完成结果】：
+--------------------------------
+6/9/2020 5:25:24 PM|
+【当前执行方法】：Query 
+【携带的参数有】： d => (d.Id == value(Doctor.Core.Controllers.DoctorController+<>c__DisplayClass4_0).id) 
+【执行完成结果】：
+--------------------------------
+6/9/2020 5:32:09 PM|
+【当前执行方法】：Query 
+【携带的参数有】： d => (d.Id == value(Doctor.Core.Controllers.DoctorController+<>c__DisplayClass4_0).id) 
+【执行完成结果】：
+--------------------------------
+6/9/2020 5:37:19 PM|
+【当前执行方法】：Query 
+【携带的参数有】： d => (d.Id == value(Doctor.Core.Controllers.DoctorController+<>c__DisplayClass4_0).id) 
+【执行完成结果】：

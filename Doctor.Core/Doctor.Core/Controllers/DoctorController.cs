@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Doctor.Core.IServices;
 using Doctor.Core.Model;
+using Doctor.Core.Common.Helper;
+using Doctor.Core.Common.Redis;
 
 namespace Doctor.Core.Controllers
 {
@@ -17,10 +19,12 @@ namespace Doctor.Core.Controllers
     public class DoctorController : ControllerBase
     {
         private readonly IAdvertisementServices advertisementServices;
+        private readonly IRedisCacheManager redisCacheManager;
 
-        public DoctorController(IAdvertisementServices advertisementServices)
+        public DoctorController(IAdvertisementServices advertisementServices, IRedisCacheManager redisCacheManager)
         {
             this.advertisementServices = advertisementServices;
+            this.redisCacheManager = redisCacheManager;
         }
 
         // GET: api/Doctor
@@ -41,7 +45,21 @@ namespace Doctor.Core.Controllers
         [HttpGet("{id}", Name = "Get")]
         public async Task<List<Advertisement>> Get(int id)
         {
-            return await advertisementServices.Query(d => d.Id == id);
+            var connect = Appsettings.app(new string[] { "AppSettings", "RedisCaching", "ConnectionString" });//按照层级的顺序，依次写出来
+
+            var advertisementList = new List<Advertisement>();
+
+            if (redisCacheManager.Get<object>("Redis.Doctor") != null)
+            {
+                advertisementList = redisCacheManager.Get<List<Advertisement>>("Redis.Doctor");
+            }
+            else
+            {
+                advertisementList = await advertisementServices.Query(d => d.Id == id);
+                redisCacheManager.Set("Redis.Doctor", advertisementList, TimeSpan.FromHours(2));
+            }
+
+            return advertisementList;
         }
 
         // POST: api/Doctor

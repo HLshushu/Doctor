@@ -21,6 +21,10 @@ using System.Reflection;
 using Autofac;
 using Autofac.Extras.DynamicProxy;
 using Doctor.Core.AOP;
+using Doctor.Core.Common.MemoryCache;
+using Doctor.Core.Common.Helper;
+using Doctor.Core.Repository;
+using Doctor.Core.Common.Redis;
 
 namespace Doctor.Core
 {
@@ -39,9 +43,16 @@ namespace Doctor.Core
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            // BaseDBConfig.ConnectionString = Configuration.GetSection("AppSettings:SqlServerConnection").Value;
+            services.AddMemoryCache();
+            services.AddScoped<ICaching, MemoryCaching>();//记得把缓存注入！！！
+            services.AddSingleton<IRedisCacheManager, RedisCacheManager>();//这里说下，如果是自己的项目，个人更建议使用单例模式 
+
+            BaseDBConfig.ConnectionString = Configuration.GetSection("AppSettings:SqlServer:SqlServerConnection").Value;
 
             var basePath = AppContext.BaseDirectory;
+
+            var appsettings = new Appsettings(basePath);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("V1", new OpenApiInfo
@@ -77,7 +88,6 @@ namespace Doctor.Core
                 //#endregion
             });
 
-
             // 1【授权】、这个和上边的异曲同工，好处就是不用在controller中，写多个 roles 。
             // 然后这么写 [Authorize(Policy = "Admin")]
             //services.AddAuthorization(options =>
@@ -98,16 +108,22 @@ namespace Doctor.Core
             // builder.RegisterType<AdvertisementServices>().As<IAdvertisementServices>();
 
             builder.RegisterType<DoctorLogAOP>();//可以直接替换其他拦截器！一定要把拦截器进行注册
+            builder.RegisterType<DoctorCacheAOP>();
 
             //注册要通过反射创建的组件
             var servicesDllFile = Path.Combine(basePath, "Doctor.Core.Services.dll");
             var assemblysServices = Assembly.LoadFrom(servicesDllFile);
 
+            //builder.RegisterAssemblyTypes(assemblysServices)
+            //          .AsImplementedInterfaces()
+            //          .InstancePerLifetimeScope()
+            //          .EnableInterfaceInterceptors()
+            //          .InterceptedBy(typeof(DoctorLogAOP), typeof(DoctorCacheAOP));//可以放一个AOP拦截器集合
+
             builder.RegisterAssemblyTypes(assemblysServices)
-                      .AsImplementedInterfaces()
-                      .InstancePerLifetimeScope()
-                      .EnableInterfaceInterceptors()
-                      .InterceptedBy(typeof(DoctorLogAOP));//可以放一个AOP拦截器集合
+          .AsImplementedInterfaces()
+          .InstancePerLifetimeScope()
+          .EnableInterfaceInterceptors();//可以放一个AOP拦截器集合
 
             var repositoryDllFile = Path.Combine(basePath, "Doctor.Core.Repository.dll");
             // 获取 Repository.dll 程序集服务，并注册
