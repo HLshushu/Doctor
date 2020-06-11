@@ -68,3 +68,13 @@
 【当前执行方法】：Query 
 【携带的参数有】： d => (d.Id == value(Doctor.Core.Controllers.DoctorController+<>c__DisplayClass4_0).id) 
 【执行完成结果】：
+--------------------------------
+6/10/2020 9:43:43 AM|
+【当前执行方法】：Query 
+【携带的参数有】： d => (d.Id == value(Doctor.Core.Controllers.DoctorController+<>c__DisplayClass4_0).id) 
+【执行完成结果】：System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[System.Collections.Generic.List`1[Doctor.Core.Model.Advertisement],Doctor.Core.Services.BaseServices`1+<Query>d__13[Doctor.Core.Model.Advertisement]]
+--------------------------------
+6/11/2020 4:20:47 PM|
+【当前执行方法】：Query 
+【携带的参数有】： d => (d.Id == value(Doctor.Core.Controllers.DoctorController+<>c__DisplayClass4_0).id) 
+【执行完成结果】：System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[System.Collections.Generic.List`1[Doctor.Core.Model.Advertisement],Doctor.Core.Services.BaseServices`1+<Query>d__13[Doctor.Core.Model.Advertisement]]

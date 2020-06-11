@@ -5,26 +5,35 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using Doctor.Core.Common.Attributes;
+using System.Threading.Tasks;
+using AutoMapper;
 
 namespace Doctor.Core.Services
 {
     public class AdvertisementServices : BaseServices<Advertisement>, IAdvertisementServices
     {
-        public int Test()
-        {
-            return 1;
-        }
-
         public IAdvertisementRepository dal;
+        IMapper IMapper;
 
-        public AdvertisementServices(IAdvertisementRepository dal)
+        public AdvertisementServices(IAdvertisementRepository dal, IMapper IMapper)
         {
             this.dal = dal;
             base.baseDal = dal;
+            this.IMapper = IMapper;
         }
 
         [Caching(AbsoluteExpiration = 10)]
         public List<AdvertisementEntity> TestAOP() => new List<AdvertisementEntity>() { new AdvertisementEntity() { id = 1, name = "laozhang" } };
+
+        public Task<List<DoctorArticle>> getDcotors()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<DoctorArticleViewModels> getDoctorDetails(int id)
+        {
+            throw new NotImplementedException();
+        }
 
         //public int Sum(int i, int j)
         //{

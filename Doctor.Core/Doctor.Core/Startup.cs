@@ -25,14 +25,30 @@ using Doctor.Core.Common.MemoryCache;
 using Doctor.Core.Common.Helper;
 using Doctor.Core.Repository;
 using Doctor.Core.Common.Redis;
+using AutoMapper;
+using log4net;
+using log4net.Config;
+using Doctor.Core.Log;
+using log4net.Repository;
 
 namespace Doctor.Core
 {
     public class Startup
     {
+        /// <summary>
+        /// log4net 仓储库
+        /// </summary>
+        public static ILoggerRepository repository { get; set; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            //log4net
+            repository = LogManager.CreateRepository("");//需要获取日志的仓库名，也就是你的当然项目名
+
+            //指定配置文件，如果这里你遇到问题，应该是使用了InProcess模式，请查看Blog.Core.csproj,并删之 
+            XmlConfigurator.Configure(repository, new FileInfo("log4net.config"));//配置文件
         }
 
         public IConfiguration Configuration { get; }
@@ -46,6 +62,9 @@ namespace Doctor.Core
             services.AddMemoryCache();
             services.AddScoped<ICaching, MemoryCaching>();//记得把缓存注入！！！
             services.AddSingleton<IRedisCacheManager, RedisCacheManager>();//这里说下，如果是自己的项目，个人更建议使用单例模式 
+            //log日志注入                                                              
+            services.AddSingleton<ILoggerHelper, LogHelper>();
+            services.AddAutoMapper(typeof(Startup));
 
             BaseDBConfig.ConnectionString = Configuration.GetSection("AppSettings:SqlServer:SqlServerConnection").Value;
 
@@ -108,22 +127,23 @@ namespace Doctor.Core
             // builder.RegisterType<AdvertisementServices>().As<IAdvertisementServices>();
 
             builder.RegisterType<DoctorLogAOP>();//可以直接替换其他拦截器！一定要把拦截器进行注册
-            builder.RegisterType<DoctorCacheAOP>();
+            // builder.RegisterType<DoctorCacheAOP>();
+            builder.RegisterType<DcotorRedisCacheAOP>();
 
             //注册要通过反射创建的组件
             var servicesDllFile = Path.Combine(basePath, "Doctor.Core.Services.dll");
             var assemblysServices = Assembly.LoadFrom(servicesDllFile);
 
-            //builder.RegisterAssemblyTypes(assemblysServices)
-            //          .AsImplementedInterfaces()
-            //          .InstancePerLifetimeScope()
-            //          .EnableInterfaceInterceptors()
-            //          .InterceptedBy(typeof(DoctorLogAOP), typeof(DoctorCacheAOP));//可以放一个AOP拦截器集合
-
             builder.RegisterAssemblyTypes(assemblysServices)
-          .AsImplementedInterfaces()
-          .InstancePerLifetimeScope()
-          .EnableInterfaceInterceptors();//可以放一个AOP拦截器集合
+                      .AsImplementedInterfaces()
+                      .InstancePerLifetimeScope()
+                      .EnableInterfaceInterceptors()
+                      .InterceptedBy(typeof(DoctorLogAOP), typeof(DcotorRedisCacheAOP));//可以放一个AOP拦截器集合
+
+            //  builder.RegisterAssemblyTypes(assemblysServices)
+            //.AsImplementedInterfaces()
+            //.InstancePerLifetimeScope()
+            //.EnableInterfaceInterceptors();//可以放一个AOP拦截器集合
 
             var repositoryDllFile = Path.Combine(basePath, "Doctor.Core.Repository.dll");
             // 获取 Repository.dll 程序集服务，并注册

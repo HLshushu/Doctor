@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace Doctor.Core.IServices
 {
@@ -12,7 +13,8 @@ namespace Doctor.Core.IServices
         //bool Delete(Advertisement model);
         //bool Update(Advertisement model);
         //List<Advertisement> Query(Expression<Func<Advertisement, bool>> whereExpression);
-        int Test();
         List<AdvertisementEntity> TestAOP();
+        Task<List<DoctorArticle>> getDcotors();
+        Task<DoctorArticleViewModels> getDoctorDetails(int id);
     }
 }

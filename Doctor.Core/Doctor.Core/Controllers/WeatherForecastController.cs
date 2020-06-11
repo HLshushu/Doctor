@@ -38,7 +38,6 @@ namespace Doctor.Core.Controllers
         [HttpGet]
         public string[] Get()
         {
-            var ads = advertisementServices.Test();
             return Summaries;
         }
 
